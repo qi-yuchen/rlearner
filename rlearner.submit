@@ -1,0 +1,16 @@
+universe = vanilla
+log = log/R.log.$(Cluster).$(Process).$(index)
+error = log/R.err.$(Cluster).$(Process).$(index)
+output = log/R.out.$(Cluster).$(Process).$(index)
+
++SingularityImage = "osdf:///ospool/ap21/data/yuw079/truncAC3.sif"
+executable = test_library.R
+arguments = $(index)
+transfer_output_files = result
+transfer_output_remaps = "result = result.$(index)"
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue index from indices_1-2.txt
