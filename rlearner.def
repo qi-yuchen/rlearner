@@ -1,0 +1,5 @@
+Bootstrap: docker
+From: rocker/tidyverse:4.1.3
+
+%post
+    R -e "install.packages(c('survival','gam','polspline','caret'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
